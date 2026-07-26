@@ -1,12 +1,13 @@
-import type { ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
-type EyebrowProps = { children: ReactNode; trailing?: ReactNode; className?: string };
+type EyebrowProps = HTMLAttributes<HTMLSpanElement> & {
+  children: ReactNode;
+};
 
-export function Eyebrow({ children, trailing, className = "" }: EyebrowProps) {
+export function Eyebrow({ children, className = "", ...props }: EyebrowProps) {
   return (
-    <div className={["eyebrow", className].filter(Boolean).join(" ")}>
-      <span>{children}</span>
-      {trailing ? <span>{trailing}</span> : null}
-    </div>
+    <span className={["eyebrow-pill", className].filter(Boolean).join(" ")} {...props}>
+      {children}
+    </span>
   );
 }

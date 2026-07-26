@@ -11,15 +11,14 @@ export function ExplorationAreas() {
     <Section aria-labelledby="exploration">
       <SectionHeader
         number="02"
-        title="Áreas de exploración"
-        note="Preguntas abiertas"
+        eyebrow="Investigación"
+        title="Áreas de estudio"
         titleId="exploration"
       />
-      <Grid columns={3}>
+      <Grid columns={3} className="card-grid">
         {explorationAreas.map((area, index) => (
           <article className="exploration-card" key={area.title}>
-            <span className="meta-label">{area.number}</span>
-            <MediaPlaceholder variant={visuals[index]} label={`Muestra ${area.number}`} />
+            <MediaPlaceholder variant={visuals[index]} />
             <h3>{area.title}</h3>
             <ul>
               {area.topics.map((topic) => (

@@ -3,16 +3,19 @@ export type MediaPlaceholderVariant =
 
 type MediaPlaceholderProps = {
   variant: MediaPlaceholderVariant;
-  label: string;
+  label?: string;
+  className?: string;
 };
 
-export function MediaPlaceholder({ variant, label }: MediaPlaceholderProps) {
+export function MediaPlaceholder({ variant, label, className = "" }: MediaPlaceholderProps) {
   return (
     <div
-      className={["media-placeholder", `media-placeholder--${variant}`].join(" ")}
+      className={["media-placeholder", `media-placeholder--${variant}`, className]
+        .filter(Boolean)
+        .join(" ")}
       aria-hidden="true"
     >
-      <span>{label}</span>
+      {label ? <span>{label}</span> : null}
       <i />
     </div>
   );

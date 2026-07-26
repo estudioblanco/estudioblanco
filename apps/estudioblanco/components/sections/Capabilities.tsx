@@ -9,12 +9,16 @@ const visuals: MediaPlaceholderVariant[] = ["grid", "field", "ruled"];
 export function Capabilities() {
   return (
     <Section aria-labelledby="capabilities">
-      <SectionHeader number="01" title="Capacidades" note="Lo que hacemos" titleId="capabilities" />
-      <Grid columns={3}>
+      <SectionHeader
+        number="01"
+        eyebrow="Servicios"
+        title="Nuestros servicios"
+        titleId="capabilities"
+      />
+      <Grid columns={3} className="card-grid">
         {capabilities.map((item, index) => (
           <article className="editorial-card" key={item.title}>
-            <span className="meta-label">{item.number}</span>
-            <MediaPlaceholder variant={visuals[index]} label={`Ensayo ${item.number}`} />
+            <MediaPlaceholder variant={visuals[index]} />
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </article>

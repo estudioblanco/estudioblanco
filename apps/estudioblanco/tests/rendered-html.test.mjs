@@ -29,12 +29,12 @@ test("server-renders the approved Estudio Blanco landing", async () => {
   const html = await response.text();
   assert.match(html, /<html lang="es">/i);
   assert.match(html, /<title>Estudio Blanco — Diseño, software e investigación<\/title>/i);
-  assert.match(html, /Diseñamos sistemas para resolver problemas complejos\./);
+  assert.match(html, /Diseñamos sistemas simples para resolver problemas complejos\./);
   assert.match(html, /id="proyectos"/);
   assert.match(html, /id="visita"/);
   assert.match(html, /logo_left\.svg/);
   assert.match(html, /logo_center\.svg/);
-  assert.match(html, /Contratar Estudio ↗/);
+  assert.match(html, /Contratar Estudio/);
   assert.doesNotMatch(html, /Sign in required|application shell|Your site is taking shape/i);
 });
 
@@ -42,7 +42,7 @@ test("keeps production assets and accessibility safeguards in place", async () =
   const [page, layout, interactions, logoLeft, logoCenter, favicon] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/button-interactions.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/refinement.css", import.meta.url), "utf8"),
     access(new URL("../public/logo_left.svg", import.meta.url)),
     access(new URL("../public/logo_center.svg", import.meta.url)),
     access(new URL("../public/favicon.png", import.meta.url)),

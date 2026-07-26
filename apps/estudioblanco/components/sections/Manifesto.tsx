@@ -1,13 +1,13 @@
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
 
 export function Manifesto() {
   return (
     <Section surface="muted" className="manifesto">
-      <span className="meta-label">Una práctica compartida</span>
+      <Eyebrow>Un proceso proyectual</Eyebrow>
       <p>
-        Combinamos investigación, diseño e ingeniería para crear herramientas útiles y productos con
-        sentido. Trabajamos cerca del problema, documentando lo que aprendemos y dejando espacio
-        para el error.
+        Combinamos investigación, diseño e ingeniería para crear productos y servicios útiles que
+        resuelven problemas.
       </p>
     </Section>
   );

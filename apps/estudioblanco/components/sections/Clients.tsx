@@ -1,37 +1,35 @@
-import { currentClients, previousClients } from "@/content/site";
-import { Grid } from "@/components/ui/Grid";
+import { clients } from "@/content/site";
+import { ClientRow } from "@/components/ui/ClientRow";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-function ClientGroup({ label, clients }: { label: string; clients: string[] }) {
-  return (
-    <div>
-      <span className="meta-label">{label}</span>
-      <h3>
-        {clients.map((client, index) => (
-          <span key={client}>
-            {index > 0 && <br />}
-            {client}
-          </span>
-        ))}
-      </h3>
-    </div>
-  );
-}
-
 export function Clients() {
+  const current = clients.filter((client) => client.group === "actual");
+  const previous = clients.filter((client) => client.group === "anterior");
+
   return (
     <Section aria-labelledby="clients">
       <SectionHeader
         number="05"
-        title="Colaboraciones"
+        eyebrow="Colaboraciones"
+        title="Clientes"
         note="Trabajo compartido"
         titleId="clients"
       />
-      <Grid columns={2} className="client-groups">
-        <ClientGroup label="Colaboraciones actuales" clients={currentClients} />
-        <ClientGroup label="Experiencia previa" clients={previousClients} />
-      </Grid>
+      <div className="client-section">
+        <h3>Clientes actuales</h3>
+        <div className="editorial-list">
+          {current.map((client) => (
+            <ClientRow key={client.title} client={client} />
+          ))}
+        </div>
+        <h3>Clientes anteriores</h3>
+        <div className="editorial-list">
+          {previous.map((client) => (
+            <ClientRow key={client.title} client={client} />
+          ))}
+        </div>
+      </div>
     </Section>
   );
 }

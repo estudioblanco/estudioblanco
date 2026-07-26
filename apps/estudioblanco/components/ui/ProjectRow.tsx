@@ -1,32 +1,30 @@
-import type { Project } from "@/content/site";
+import type { EditorialEntry } from "@/content/site";
 import { MediaPlaceholder } from "@/components/ui/MediaPlaceholder";
+import { StatusPill } from "@/components/ui/StatusPill";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { mailto } from "@/content/site";
 
-type ProjectRowProps = { project: Project };
+type ProjectRowProps = { project: EditorialEntry };
 
 export function ProjectRow({ project }: ProjectRowProps) {
   return (
-    <article className="project-row">
+    <article className="editorial-row project-row">
       <a
-        className="project-row__link"
+        className="editorial-row__link"
         href={mailto(`Consulta sobre ${project.title}`)}
         aria-label={`${project.title}: ${project.description}`}
       >
-        <div className="project-row__identity">
-          <span className="meta-label">{project.number}</span>
+        <div className="editorial-row__identity">
+          <Eyebrow>{project.number}</Eyebrow>
           <h3>{project.title}</h3>
-          <p>{project.category}</p>
+          <h4>{project.subtitle}</h4>
         </div>
-        <div className="project-row__summary">
+        <div className="editorial-row__summary">
           <p>{project.description}</p>
-          <span>
-            {project.year} · {project.status}
-          </span>
+          <StatusPill>{project.status}</StatusPill>
+          {project.year ? <span className="editorial-row__year">{project.year}</span> : null}
         </div>
-        <MediaPlaceholder variant={project.visual} label={project.number} />
-        <span className="project-row__arrow" aria-hidden="true">
-          ↗
-        </span>
+        <MediaPlaceholder variant={project.visual} className="media-placeholder--banner" />
       </a>
     </article>
   );

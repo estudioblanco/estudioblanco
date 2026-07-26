@@ -8,11 +8,12 @@ export function Projects() {
     <Section id="proyectos" aria-labelledby="projects">
       <SectionHeader
         number="04"
+        eyebrow="Trabajo en curso"
         title="Proyectos"
         note={`${projects.length} proyectos activos`}
         titleId="projects"
       />
-      <div className="project-list">
+      <div className="editorial-list">
         {projects.map((project) => (
           <ProjectRow key={project.title} project={project} />
         ))}

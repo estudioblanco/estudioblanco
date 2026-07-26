@@ -1,4 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
+import { Container } from "@/components/ui/Container";
 
 export type SectionSurface = "paper" | "muted" | "dark" | "sage";
 
@@ -11,7 +12,7 @@ export function Section({ children, className = "", surface = "paper", ...props 
   const classes = ["section", `surface-${surface}`, className].filter(Boolean).join(" ");
   return (
     <section className={classes} {...props}>
-      {children}
+      <Container>{children}</Container>
     </section>
   );
 }

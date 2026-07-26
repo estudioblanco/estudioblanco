@@ -6,7 +6,12 @@ import { TextInput } from "@/components/ui/TextInput";
 export function Events() {
   return (
     <Section className="events" aria-labelledby="events">
-      <SectionHeader number="06" title="Agenda abierta" note="Cursos + talleres" titleId="events" />
+      <SectionHeader
+        number="06"
+        eyebrow="Cursos + talleres"
+        title="Agenda abierta"
+        titleId="events"
+      />
       <div className="event-content">
         <h3>El laboratorio también es un lugar de aprendizaje.</h3>
         <div>
@@ -18,7 +23,7 @@ export function Events() {
             <label htmlFor="email">Recibir novedades</label>
             <div>
               <TextInput id="email" name="email" type="email" placeholder="tu@email.com" required />
-              <button aria-label="Suscribirse">→</button>
+              <button aria-label="Suscribirse">Enviar</button>
             </div>
           </form>
         </div>
