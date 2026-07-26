@@ -1,0 +1,6 @@
+/* Keep header CTAs in the same charcoal/bone system when the navigation is dark. */
+.site-header[data-scrolled="true"] .button {
+  background: var(--surface-dark);
+  border-color: rgba(242, 238, 223, 0.24);
+  color: var(--text-on-dark);
+}
