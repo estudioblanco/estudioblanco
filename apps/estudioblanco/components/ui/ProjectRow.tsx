@@ -16,8 +16,8 @@ export function ProjectRow({ project }: ProjectRowProps) {
       >
         <div className="editorial-row__identity">
           <Eyebrow>{project.number}</Eyebrow>
-          <h3>{project.title}</h3>
-          <h4>{project.subtitle}</h4>
+          <h3 className="type-heading-3">{project.title}</h3>
+          <h4 className="type-heading-4">{project.subtitle}</h4>
         </div>
         <div className="editorial-row__summary">
           <p>{project.description}</p>

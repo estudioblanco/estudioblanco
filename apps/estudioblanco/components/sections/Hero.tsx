@@ -8,7 +8,7 @@ export function Hero() {
     <section className="hero dotted-surface" id="inicio">
       <Container>
         <Eyebrow>Laboratorio independiente</Eyebrow>
-        <h1>Diseñamos sistemas simples para resolver problemas complejos.</h1>
+        <h1 className="type-heading-1">Diseñamos sistemas simples para resolver problemas complejos.</h1>
         <div className="hero__support">
           <p>
             Estudio Blanco es un laboratorio independiente enfocado en diseño, software,

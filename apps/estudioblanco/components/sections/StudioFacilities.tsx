@@ -9,7 +9,7 @@ export function StudioFacilities() {
       <SectionHeader number="03" eyebrow="Espacio" title="El estudio" titleId="studio" />
       <div className="studio-intro">
         <div className="studio-intro__copy">
-          <h3>Un lugar para hacer, probar y compartir.</h3>
+          <h3 className="type-heading-3-feature">Un lugar para hacer, probar y compartir.</h3>
           <p>
             Un espacio de encuentro que funciona como taller, oficina, aula y laboratorio creativo.
           </p>
@@ -24,7 +24,7 @@ export function StudioFacilities() {
               <i />
             </span>
             <div>
-              <h4>{item.label}</h4>
+              <h4 className="type-heading-4">{item.label}</h4>
               <p>{item.description}</p>
             </div>
           </article>

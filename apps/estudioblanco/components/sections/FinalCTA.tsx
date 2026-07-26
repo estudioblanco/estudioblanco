@@ -12,7 +12,7 @@ export function FinalCTA() {
         title="Conversemos"
         titleId="conversion"
       />
-      <h2>
+      <h2 className="type-heading-cta">
         ¿Tenés un problema
         <br />
         interesante?

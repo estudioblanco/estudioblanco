@@ -19,7 +19,7 @@ export function ExplorationAreas() {
         {explorationAreas.map((area, index) => (
           <article className="exploration-card" key={area.title}>
             <MediaPlaceholder variant={visuals[index]} />
-            <h3>{area.title}</h3>
+            <h3 className="type-heading-3">{area.title}</h3>
             <ul>
               {area.topics.map((topic) => (
                 <li key={topic}>{topic}</li>

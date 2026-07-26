@@ -19,7 +19,7 @@ export function Capabilities() {
         {capabilities.map((item, index) => (
           <article className="editorial-card" key={item.title}>
             <MediaPlaceholder variant={visuals[index]} />
-            <h3>{item.title}</h3>
+            <h3 className="type-heading-3">{item.title}</h3>
             <p>{item.description}</p>
           </article>
         ))}

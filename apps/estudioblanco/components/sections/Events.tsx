@@ -13,7 +13,7 @@ export function Events() {
         titleId="events"
       />
       <div className="event-content">
-        <h3>El laboratorio también es un lugar de aprendizaje.</h3>
+        <h3 className="type-heading-3-feature">El laboratorio también es un lugar de aprendizaje.</h3>
         <div>
           <p>
             Cursos, talleres y encuentros sobre diseño, tecnología y cultura. Ideas en progreso,

@@ -22,7 +22,7 @@ export function SectionHeader({
       </span>
       <div className="section-header__content">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h2 id={titleId}>{title}</h2>
+        <h2 id={titleId} className="type-heading-2">{title}</h2>
         {note ? <p>{note}</p> : null}
       </div>
     </header>

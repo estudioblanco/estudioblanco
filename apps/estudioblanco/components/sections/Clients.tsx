@@ -17,13 +17,13 @@ export function Clients() {
         titleId="clients"
       />
       <div className="client-section">
-        <h3>Clientes actuales</h3>
+        <h3 className="type-heading-3">Clientes actuales</h3>
         <div className="editorial-list">
           {current.map((client) => (
             <ClientRow key={client.title} client={client} />
           ))}
         </div>
-        <h3>Clientes anteriores</h3>
+        <h3 className="type-heading-3">Clientes anteriores</h3>
         <div className="editorial-list">
           {previous.map((client) => (
             <ClientRow key={client.title} client={client} />

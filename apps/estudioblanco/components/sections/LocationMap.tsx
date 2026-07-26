@@ -17,7 +17,7 @@ export function LocationMap() {
       <div className="location-layout">
         <div className="location-copy">
           <Eyebrow>Visitar el estudio</Eyebrow>
-          <h3>{address.street}</h3>
+          <h3 className="type-heading-3">{address.street}</h3>
           <p>
             {address.city}, {address.province}
             <br />

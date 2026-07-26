@@ -11,8 +11,8 @@ export function ClientRow({ client }: ClientRowProps) {
       <div className="editorial-row__link">
         <div className="editorial-row__identity">
           <Eyebrow>{client.number}</Eyebrow>
-          <h3>{client.title}</h3>
-          <h4>{client.subtitle}</h4>
+          <h3 className="type-heading-3">{client.title}</h3>
+          <h4 className="type-heading-4">{client.subtitle}</h4>
         </div>
         <details className="client-row__details">
           <summary>
