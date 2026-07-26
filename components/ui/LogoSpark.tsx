@@ -13,8 +13,8 @@ type LogoSparkProps = {
 };
 
 const logoAssets: Record<LogoVariant, string> = {
-  left: "/logo-left.svg",
-  center: "/logo-center.svg",
+  left: "/logo_left.svg",
+  center: "/logo_center.svg",
   symbol: "/isotipo.svg",
 };
 
