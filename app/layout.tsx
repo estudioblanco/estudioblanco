@@ -11,7 +11,11 @@ export const metadata:Metadata={
   title:"Estudio Blanco — Diseño, software e investigación",
   description:"Laboratorio independiente de diseño, software, inteligencia artificial e investigación en General Madariaga.",
   openGraph:{title:"Estudio Blanco",description:"Diseñamos sistemas para resolver problemas complejos.",type:"website",locale:"es_AR"},
-  icons:{icon:"/favicon.svg",shortcut:"/favicon.svg"}
+  icons:{
+    icon:[{url:"/favicon.png",type:"image/png",sizes:"64x64"}],
+    shortcut:"/favicon.png",
+    apple:"/favicon.png"
+  }
 };
 
 export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){
