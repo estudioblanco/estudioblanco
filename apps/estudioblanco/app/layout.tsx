@@ -1,19 +1,33 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import "./header.css";
+import "./button-interactions.css";
+import "./button-context.css";
+import "./visual-review.css";
 
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Estudio Blanco",
-  description: "Estudio Blanco application shell",
+  title: "Estudio Blanco — Diseño, software e investigación",
+  description:
+    "Laboratorio independiente de diseño, software, inteligencia artificial e investigación en General Madariaga.",
+  openGraph: {
+    title: "Estudio Blanco",
+    description: "Diseñamos sistemas para resolver problemas complejos.",
+    type: "website",
+    locale: "es_AR",
+  },
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "64x64" }],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
-
-type RootLayoutProps = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="es">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
     </html>
   );
 }
