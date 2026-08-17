@@ -10,12 +10,11 @@ import { Projects } from "@/components/sections/Projects";
 import { Clients } from "@/components/sections/Clients";
 import { Events } from "@/components/sections/Events";
 import { LocationMap } from "@/components/sections/LocationMap";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Estudio Blanco — Diseño, software e investigación",
+  title: "Estudio Blanco — Diseño y tecnología",
   description:
-    "Laboratorio independiente de diseño, software, IA e investigación en General Madariaga.",
+    "Diseñamos y construimos productos y sistemas digitales combinando diseño, software e inteligencia artificial.",
 };
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
       <Clients />
       <Events />
       <LocationMap />
-      <FinalCTA />
       <SiteFooter />
     </main>
   );

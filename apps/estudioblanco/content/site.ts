@@ -35,17 +35,17 @@ export const capabilities: Capability[] = [
   {
     title: "Diseño de Producto",
     description:
-      "Investigación, estrategia, interfaces y sistemas que convierten complejidad en experiencias claras.",
+      "Investigación, estrategia e interfaces para transformar necesidades reales en productos digitales claros y utilizables.",
   },
   {
-    title: "Desarrollo de Software",
+    title: "Software + IA",
     description:
-      "Productos digitales, automatizaciones e inteligencia artificial construidos para durar.",
+      "Construimos productos, herramientas internas, automatizaciones y agentes que integran software e inteligencia artificial.",
   },
   {
-    title: "Identidad y Marca",
+    title: "Sistemas de Diseño",
     description:
-      "Lenguajes visuales y verbales que ayudan a organizaciones e ideas a encontrar su forma propia.",
+      "Creamos sistemas visuales, componentes y herramientas que permiten a productos y organizaciones crecer con consistencia.",
   },
 ];
 
@@ -209,7 +209,7 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const contact: ContactDetails = {
-  email: "hola@estudioblanco.com.ar",
+  email: "hola@estudioblanco.org",
   address: {
     street: "Dr. Carlos Madariaga 479",
     city: "General Madariaga",

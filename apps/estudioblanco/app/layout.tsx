@@ -10,13 +10,14 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL("https://estudioblanco.org"),
 
-  title: "Estudio Blanco — Diseño, software e investigación",
+  title: "Estudio Blanco — Diseño y tecnología",
   description:
-    "Laboratorio independiente de diseño, software, inteligencia artificial e investigación en General Madariaga.",
+    "Diseñamos y construimos productos y sistemas digitales combinando diseño, software e inteligencia artificial.",
 
   openGraph: {
     title: "Estudio Blanco",
-    description: "Diseñamos sistemas simples para resolver problemas complejos.",
+    description:
+      "Diseñamos y construimos productos y sistemas digitales combinando diseño, software e inteligencia artificial.",
     url: "https://estudioblanco.org",
     siteName: "Estudio Blanco",
     type: "website",
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Estudio Blanco",
-    description: "Diseñamos sistemas simples para resolver problemas complejos.",
+    description:
+      "Diseñamos y construimos productos y sistemas digitales combinando diseño, software e inteligencia artificial.",
     images: ["/og.webp"],
   },
 
