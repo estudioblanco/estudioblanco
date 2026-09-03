@@ -208,7 +208,7 @@ body {
 }
 
 .hero h1 {
-  max-width: 48rem;
+  max-width: 52rem;
   margin: clamp(4rem, 8vh, 7rem) 0 var(--space-6);
 }
 
