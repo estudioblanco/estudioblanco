@@ -1,5 +1,12 @@
 # AGENTS.md
 
+## Current Status
+
+- Read [STATUS.md](STATUS.md) before starting work. It records the production
+  baseline, branch responsibilities, known failures, and deployment
+  constraints.
+- Do not deploy or roll back production without explicit approval.
+
 ## Project Principles
 
 - Keep the repository documentation-first and product-empty until scope is approved.
