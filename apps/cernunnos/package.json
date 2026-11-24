@@ -12,7 +12,7 @@
     "deploy": "pnpm build && wrangler pages deploy out"
   },
   "dependencies": {
-    "next": "^15.5.20",
+    "next": "^15.5.29",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
