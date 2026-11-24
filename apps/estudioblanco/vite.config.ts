@@ -13,6 +13,11 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 const localBindingConfig = {
   main: "./worker/index.ts",
   compatibility_flags: ["nodejs_compat"],
+  // Serve only through the custom domain. Keep the workers.dev route and
+  // per-version preview URLs disabled so no version is publicly reachable
+  // outside production.
+  workers_dev: false,
+  preview_urls: false,
   d1_databases: d1
     ? [
         {
