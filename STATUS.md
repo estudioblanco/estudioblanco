@@ -4,9 +4,10 @@ Operational snapshot of the repository for contributors and AI agents. It
 records the current state. Rules stay in [AGENTS.md](AGENTS.md). Update this
 file whenever the production baseline, branch roles, or known failures change.
 
-**Last updated:** 2026-11-24 (UTC), at the close of the M0 recovery phase.
-**Next phase:** M1, Architecture Decision. It is an evaluation phase, not an
-implementation sprint.
+**Last updated:** 2026-11-24 (UTC). M0 recovery and M1 architecture decision
+are complete. **Current phase:** M2, foundation and local prototype of the
+next website (`apps/estudioblanco-v2`, Astro), developed on an isolated
+feature branch. See [ADR-0004](docs/adr/0004-web-runtime-and-publishing.md).
 
 ## Repository Structure
 
@@ -18,6 +19,9 @@ implementation sprint.
 | `packages/typescript-config` | Shared TypeScript configuration.                                                                                                                                                                           |
 | `packages/bahaus`            | Bahaus design system. **Not on `main` yet.** It exists only on `claude/bahaus-m0-recovery` (see below).                                                                                                    |
 | `docs/`                      | Principles, ADRs, architecture, brand, product, and research documentation.                                                                                                                                |
+
+`apps/estudioblanco` remains the production application until its replacement
+is reviewed and approved. It receives maintenance and security fixes only.
 
 Tooling: pnpm 11.9 workspace with Turborepo. Root commands: `pnpm lint`,
 `pnpm typecheck`, `pnpm build`, `pnpm format:check`.
@@ -35,7 +39,11 @@ Tooling: pnpm 11.9 workspace with Turborepo. Root commands: `pnpm lint`,
 | `codex/fix-hero-responsive-measure`          | `cbf05fe` | Merged through PR #4. Historical.                                                                                                                 |
 | `feat/cloudflare-bootstrap`                  | `7292d76` | Cloudflare build scripts, merged through PR #1 as a separate commit. Historical.                                                                  |
 
-Use `<author>/<slug>` branch names and Conventional Commits.
+Use `<author>/<slug>` branch names (or `feat/<slug>` for approved feature
+work) and Conventional Commits.
+
+`main` is protected by a ruleset: changes land through pull requests;
+force-pushes and branch deletion are blocked.
 
 ## Production Baseline
 
@@ -122,22 +130,24 @@ Report these failures; do not fix them as a side effect of unrelated work.
   commit can differ slightly in font CSS.
 - There is no staging environment.
 
-## Remaining Architectural Decisions (M1)
+## Architecture (ADR-0004, Accepted)
 
-1. **Web runtime (ADR-0004):** keep vinext (pre-1.0) on Cloudflare Workers
-   with an upgrade cadence, move to Next.js with OpenNext, or move to a static
-   export.
-2. **Bahaus integration:** whether and how `packages/bahaus` lands on `main`
-   and is consumed by the applications (ADR-0003 on the Bahaus branch).
-3. **Content architecture:** how the unified Estudio Blanco portfolio is
-   modeled and published. Portfolio content is being recovered in a separate
-   workspace outside this repository. Do not access it from work in this
-   repository, and do not start portfolio implementation without approval.
-4. **Publishing infrastructure:** a committed Wrangler configuration, a single
-   deploy path (CI or Cloudflare Workers Builds), a staging environment, and
-   exposure of the deployed commit.
-5. **Stack alignment:** whether Estudio Blanco and Cernunnos converge on one
-   framework. They remain separate applications either way.
+- Content websites: Astro, static-first; React (including Bahaus) rendered at
+  build time; client JavaScript only as explicit islands.
+- Interactive applications and experiments: Vite and React.
+- Bahaus: autonomous shared design system, documented in Storybook.
+- Content: schema-validated JSON and Markdown; private content repository
+  deferred until the local prototype is validated.
+- Media: Cloudflare R2 (not provisioned yet).
+- Hosting: Cloudflare Workers Static Assets; GitHub Actions CI/CD (not set up
+  yet); access-protected previews; human-approved production deploys.
+
+Open items:
+
+1. Portfolio content transfer from the separate recovery workspace requires
+   explicit approval. Do not access that workspace from this repository.
+2. Whether Estudio Blanco and Cernunnos converge on one stack. They remain
+   separate applications either way.
 
 ## Pending Security and Infrastructure Work
 
@@ -145,15 +155,20 @@ Maintainers keep detailed findings in private records outside version
 control. Never commit audit reports, evidence, credentials, or client
 information to this public repository.
 
+Done:
+
+- GitHub dependency alerts, Dependabot security updates, secret scanning, and
+  push protection are enabled.
+- `main` is protected by a ruleset.
+- Edge request filtering is in place for the production hostname.
+
 Planned workstreams:
 
 - Edge hardening for the production zone: HTTPS enforcement, HSTS, and
   security headers.
 - Email-authentication DNS records, after confirming every sending service.
-- GitHub repository security: dependency alerts, secret scanning, push
-  protection, and a branch ruleset for `main`.
 - CI on every pull request: frozen install, lint, typecheck, format check,
   tests, build, and dependency audit.
 - Access policies for non-production hostnames.
-- Removing `WRANGLER_LOG_PATH` from the app scripts.
+- Removing `WRANGLER_LOG_PATH` from the app scripts (pull request open).
 - Fixing the known format and test failures, and triaging `pnpm audit`.

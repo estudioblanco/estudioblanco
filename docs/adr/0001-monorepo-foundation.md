@@ -2,7 +2,9 @@
 
 ## Status
 
-Accepted
+Accepted. Amended by [ADR-0004](0004-web-runtime-and-publishing.md):
+applications are independently deployable web applications, not necessarily
+Next.js projects.
 
 ## Date
 

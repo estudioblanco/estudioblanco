@@ -5,7 +5,9 @@ packages should be added deliberately as separate units.
 
 ## Apps
 
-Apps live in `apps/` and should be independently deployable Next.js projects.
+Apps live in `apps/` and should be independently deployable web applications.
+The runtime and publishing model is defined in
+[ADR-0004](adr/0004-web-runtime-and-publishing.md).
 
 Each app owns:
 
